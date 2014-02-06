@@ -31,3 +31,5 @@ fonts/Verdana.ttf
 CMakeFiles
 CMakeCache.txt
 *.o
+
+/build/

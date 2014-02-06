@@ -48,6 +48,8 @@
     #include <GL/glut.h>
 #endif
 
+#define round(x) ((x >= 0) ? (int)(x + 0.5) : (int)(x - 0.5))
+
 #define max(a,b) ((a) > (b) ? (a) : (b))
 #define min(a,b) ((a) < (b) ? (a) : (b))
 

@@ -419,6 +419,12 @@ texture_font_load_glyphs( texture_font_t * self,
     ivec4 region;
     size_t missed = 0;
 
+	char pass;
+
+    FT_Int32 flags = 0;
+    int ft_glyph_top = 0;
+    int ft_glyph_left = 0;
+
     assert( self );
     assert( charcodes );
 
@@ -426,8 +432,6 @@ texture_font_load_glyphs( texture_font_t * self,
     width  = self->atlas->width;
     height = self->atlas->height;
     depth  = self->atlas->depth;
-
-    char pass;
 
     if (!texture_font_get_face(self, &library, &face))
         return wcslen(charcodes);
@@ -448,9 +452,7 @@ texture_font_load_glyphs( texture_font_t * self,
         if(pass)
           continue; // don't add the item
 
-        FT_Int32 flags = 0;
-        int ft_glyph_top = 0;
-        int ft_glyph_left = 0;
+
         glyph_index = FT_Get_Char_Index( face, charcodes[i] );
         // WARNING: We use texture-atlas depth to guess if user wants
         //          LCD subpixel rendering
