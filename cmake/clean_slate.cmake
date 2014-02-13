@@ -1,4 +1,5 @@
-# fix output directories - get rid of Release/Debug
+# make sure that visual studio and xcode also use the same directory structure also
+# other compilers (instead of Debug and Release)
 if(MSVC)
 	foreach(OUTPUTCONFIG ${CMAKE_CONFIGURATION_TYPES})
 		string(TOUPPER ${OUTPUTCONFIG} OUTPUTCONFIG)
