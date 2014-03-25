@@ -38,7 +38,8 @@ SET(CMAKE_MODULE_PATH
 	"${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules"
 	"${CMAKE_MODULE_PATH}")
 
-include ( cmake/clean_slate.cmake )
+set(vendor "${CMAKE_CURRENT_SOURCE_DIR}/..")
+include(${vendor}/unifier/unifier.cmake)
 
 OPTION(BUILD_DEMOS "Build the freetype-gl example programs" OFF)
 
